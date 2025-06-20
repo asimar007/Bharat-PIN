@@ -31,7 +31,7 @@ export default function PinSearchInput({ onSearch }) {
           onChange={(e) => setSearchPin(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && handleSearch()}
           placeholder="Enter Bharat PIN"
-          className="border rounded px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-purple-300"
+          className="border-2 border-black rounded px-2 py-1 text-sm focus:outline-none text-black"
           maxLength={13}
         />
         <button
