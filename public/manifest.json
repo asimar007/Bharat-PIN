@@ -1,0 +1,16 @@
+{
+  "name": "Bharat Pin",
+  "short_name": "BharatPin",
+  "description": "Find and share precise locations across India with Bharat Pin. Explore the map and get your Bharat PIN.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1976d2",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}

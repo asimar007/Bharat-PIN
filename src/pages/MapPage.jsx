@@ -7,6 +7,7 @@ import LocationMarker from "../components/LocationMarker/LocationMarker";
 import CurrentLocationButton from "../components/CurrentLocationButton";
 import StatusBar from "../components/StatusBar/StatusBar";
 import ErrorBanner from "../components/ErrorBanner";
+import SEO from "../components/SEO";
 
 const initialPosition = { lat: 28.6448, lng: 77.216721 }; // Default Location (Delhi)
 
@@ -37,35 +38,41 @@ export default function MapPage() {
   };
 
   return (
-    <div className="h-screen w-full flex flex-col overflow-hidden">
-      <div className="flex-1 w-full relative">
-        <MapWrapper center={mapPosition}>
-          <IndiaBorderLayer data={indiaBorderGeoJSON} />
-          <LocationMarker
-            location={selectedLocation}
-            onSelect={setSelectedLocation}
-            onClear={() => setSelectedLocation(null)}
-          />
-          <CurrentLocationButton
-            onLocationFound={handleLocationFound}
-            onLocationError={handleLocationError}
-          />
-        </MapWrapper>
+    <>
+      <SEO
+        title="Bharat Pin Map - Get Your Bharat PIN Instantly"
+        description="Explore the interactive map of India and get your unique Bharat PIN for any location. Share and find precise locations easily."
+      />
+      <div className="h-screen w-full flex flex-col overflow-hidden">
+        <div className="flex-1 w-full relative">
+          <MapWrapper center={mapPosition}>
+            <IndiaBorderLayer data={indiaBorderGeoJSON} />
+            <LocationMarker
+              location={selectedLocation}
+              onSelect={setSelectedLocation}
+              onClear={() => setSelectedLocation(null)}
+            />
+            <CurrentLocationButton
+              onLocationFound={handleLocationFound}
+              onLocationError={handleLocationError}
+            />
+          </MapWrapper>
 
-        <ErrorBanner message={locationError} />
-      </div>
-
-      {selectedLocation && (
-        <div className="w-full">
-          <StatusBar
-            location={selectedLocation}
-            onSearchLocation={(loc) => {
-              setMapPosition({ lat: loc.lat, lng: loc.lng });
-              setSelectedLocation(loc);
-            }}
-          />
+          <ErrorBanner message={locationError} />
         </div>
-      )}
-    </div>
+
+        {selectedLocation && (
+          <div className="w-full">
+            <StatusBar
+              location={selectedLocation}
+              onSearchLocation={(loc) => {
+                setMapPosition({ lat: loc.lat, lng: loc.lng });
+                setSelectedLocation(loc);
+              }}
+            />
+          </div>
+        )}
+      </div>
+    </>
   );
 }
