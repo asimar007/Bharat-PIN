@@ -43,8 +43,8 @@ export default function MapPage() {
         title="Bharat Pin Map - Get Your Bharat PIN Instantly"
         description="Explore the interactive map of India and get your unique Bharat PIN for any location. Share and find precise locations easily."
       />
-      <div className="h-screen w-full flex flex-col overflow-hidden">
-        <div className="flex-1 w-full relative">
+      <div className="fixed inset-0 w-full flex flex-col overflow-hidden">
+        <div className="flex-1 w-full relative min-h-0">
           <MapWrapper center={mapPosition}>
             <IndiaBorderLayer data={indiaBorderGeoJSON} />
             <LocationMarker
@@ -62,7 +62,7 @@ export default function MapPage() {
         </div>
 
         {selectedLocation && (
-          <div className="w-full">
+          <div className="w-full flex-shrink-0 safe-area-inset-bottom">
             <StatusBar
               location={selectedLocation}
               onSearchLocation={(loc) => {

@@ -5,8 +5,12 @@ export default function MapWrapper({ center, children }) {
     <MapContainer
       center={[center.lat, center.lng]}
       zoom={13}
-      className="h-full w-full z-0 touch-none"
+      className="h-full w-full z-0"
       zoomControl={false}
+      touchZoom={true}
+      scrollWheelZoom={true}
+      doubleClickZoom={true}
+      dragging={true}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

@@ -14,6 +14,11 @@ export default function LocationMarker({ location, onSelect, onClear }) {
             autoClose={false}
             closeOnClick={false}
             closeButton={false}
+            maxWidth={320}
+            minWidth={240}
+            autoPan={true}
+            autoPanPadding={[15, 15]}
+            keepInView={true}
           >
             <DigipinPopup location={location} onClose={onClear} />
           </Popup>
