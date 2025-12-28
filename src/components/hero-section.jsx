@@ -5,11 +5,6 @@ import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { ProgressiveBlur } from "@/components/ui/progressive-blur";
 import { Globe } from "@/components/ui/globe";
 import { Github } from "lucide-react";
-import { FeaturesSection } from "./features-section";
-import { UseCasesSection } from "./use-cases-section";
-import { HowItWorksSection } from "./how-it-works-section";
-import { About } from "./about";
-import WorldMapDemo from "@/components/hero-map";
 
 export default function HeroSection() {
   return (
@@ -133,11 +128,7 @@ export default function HeroSection() {
             </div>
           </div>
         </section>
-        <FeaturesSection />
-        <HowItWorksSection />
-        <UseCasesSection />
-        <About />
-        <WorldMapDemo />
+        
       </main>
     </>
   );
