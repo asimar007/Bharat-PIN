@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 import React from "react";
 
 const menuItems = [
-  { name: "Features", href: "#link" },
-  { name: "Solution", href: "#link" },
-  { name: "Pricing", href: "#link" },
-  { name: "About", href: "#link" },
+  { name: "Features", href: "#features" },
+  { name: "How It Works", href: "#how-it-works" },
+  { name: "Use Cases", href: "#use-cases" },
+  { name: "About", href: "#about" },
 ];
 
 export const HeroHeader = () => {

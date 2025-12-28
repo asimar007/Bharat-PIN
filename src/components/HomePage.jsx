@@ -7,7 +7,6 @@ import {
   Navigation,
   Shield,
   Zap,
-  Globe,
   Smartphone,
   Hospital,
   Package,
@@ -59,7 +58,7 @@ export default function Home() {
       color: "from-yellow-500 to-orange-500",
     },
     {
-      icon: <Globe className="h-7 w-7" />,
+      icon: <Zap className="h-7 w-7" />,
       title: "Interactive visualization",
       description: "Leaflet-powered maps with real-time location pinpointing",
       color: "from-indigo-500 to-blue-500",

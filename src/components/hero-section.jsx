@@ -4,6 +4,11 @@ import { HeroHeader } from "./header";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { ProgressiveBlur } from "@/components/ui/progressive-blur";
 import { Globe } from "@/components/ui/globe";
+import { Github } from "lucide-react";
+import { FeaturesSection } from "./features-section";
+import { UseCasesSection } from "./use-cases-section";
+import { HowItWorksSection } from "./how-it-works-section";
+import { About } from "./about";
 
 export default function HeroSection() {
   return (
@@ -15,17 +20,18 @@ export default function HeroSection() {
             <div className="relative mx-auto flex max-w-6xl flex-col px-6 lg:block">
               <div className="mx-auto max-w-lg text-center lg:ml-0 lg:w-1/2 lg:text-left">
                 <h1 className="mt-8 max-w-2xl text-balance text-5xl font-medium md:text-6xl lg:mt-16 xl:text-7xl">
-                  Ship 10x Faster with NS
+                  Bharat PIN
                 </h1>
                 <p className="mt-8 max-w-2xl text-pretty text-lg">
-                  Highly customizable components for building modern websites
-                  and applications that look and feel the way you mean it.
+                  Discover exact geographical coordinates, postal codes, and
+                  detailed location information across India's vast landscape.
+                  From bustling cities to remote villages.
                 </p>
 
                 <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
                   <Button asChild size="lg" className="px-5 text-base">
-                    <a href="#link">
-                      <span className="text-nowrap">Start Building</span>
+                    <a href="/map">
+                      <span className="text-nowrap">Get Your Bharat PIN</span>
                     </a>
                   </Button>
                   <Button
@@ -34,15 +40,21 @@ export default function HeroSection() {
                     variant="ghost"
                     className="px-5 text-base"
                   >
-                    <a href="#link">
-                      <span className="text-nowrap">Request a demo</span>
+                    <a
+                      href="https://github.com/asimar007/Bharat-PIN"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2"
+                    >
+                      <Github className="h-4 w-4" />
+                      <span className="text-nowrap">View on GitHub</span>
                     </a>
                   </Button>
                 </div>
               </div>
-              <div className="relative -z-10 order-first ml-auto w-full max-w-[400px] aspect-square lg:absolute lg:inset-0 lg:-right-20 lg:-top-70 lg:order-last lg:w-2/3 lg:max-w-none lg:h-max">
+              {/* <div className="relative -z-10 order-first ml-auto w-full max-w-[400px] aspect-square lg:absolute lg:inset-0 lg:-right-20 lg:-top-70 lg:order-last lg:w-2/3 lg:max-w-none lg:h-max">
                 <Globe className="w-full h-full mix-blend-lighten invert-0" />
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
@@ -50,65 +62,57 @@ export default function HeroSection() {
           <div className="group relative m-auto max-w-6xl px-6">
             <div className="flex flex-col items-center md:flex-row">
               <div className="md:max-w-44 md:border-r md:pr-6">
-                <p className="text-end text-sm">Powering the best teams</p>
+                <p className="text-end text-sm">The Tech Stack are</p>
               </div>
               <div className="relative py-6 md:w-[calc(100%-11rem)]">
                 <InfiniteSlider speedOnHover={20} speed={40} gap={112}>
-                  <div className="flex">
+                  <div className="flex items-center gap-2">
                     <img
-                      className="mx-auto h-5 w-fit invert"
-                      src="https://html.tailus.io/blocks/customers/nvidia.svg"
-                      alt="Nvidia Logo"
+                      className="h-5 w-fit invert"
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg"
+                      alt="Vercel Logo"
                     />
+                    <span className="font-medium text-sm">Vercel</span>
                   </div>
-                  <div className="flex">
+                  <div className="flex items-center gap-2">
                     <img
-                      className="mx-auto h-4 w-fit invert"
-                      src="https://html.tailus.io/blocks/customers/column.svg"
-                      alt="Column Logo"
+                      className="h-6 w-fit brightness-0 invert"
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+                      alt="React.js Logo"
                     />
+                    <span className="font-medium text-sm">React.js</span>
                   </div>
-                  <div className="flex">
+                  <div className="flex items-center gap-2">
                     <img
-                      className="mx-auto h-4 w-fit invert"
-                      src="https://html.tailus.io/blocks/customers/github.svg"
+                      className="h-6 w-fit invert"
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
                       alt="GitHub Logo"
                     />
+                    <span className="font-medium text-sm">GitHub</span>
                   </div>
-                  <div className="flex">
+                  <div className="flex items-center gap-2">
                     <img
-                      className="mx-auto h-5 w-fit invert"
-                      src="https://html.tailus.io/blocks/customers/nike.svg"
-                      alt="Nike Logo"
+                      className="h-6 w-fit invert"
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-plain.svg"
+                      alt="Vite.js Logo"
                     />
+                    <span className="font-medium text-sm">Vite</span>
                   </div>
-                  <div className="flex">
+                  <div className="flex items-center gap-2">
                     <img
-                      className="mx-auto h-5 w-fit invert"
-                      src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
-                      alt="Lemon Squeezy Logo"
+                      className="h-6 w-fit brightness-0 invert"
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+                      alt="TailwindCSS Logo"
                     />
+                    <span className="font-medium text-sm">TailwindCSS</span>
                   </div>
-                  <div className="flex">
+                  <div className="flex items-center gap-2">
                     <img
-                      className="mx-auto h-4 w-fit invert"
-                      src="https://html.tailus.io/blocks/customers/laravel.svg"
-                      alt="Laravel Logo"
+                      className="h-7 w-fit invert"
+                      src="https://tanstack.com/images/logos/logo-black.svg"
+                      alt="TanStack Logo"
                     />
-                  </div>
-                  <div className="flex">
-                    <img
-                      className="mx-auto h-7 w-fit invert"
-                      src="https://html.tailus.io/blocks/customers/lilly.svg"
-                      alt="Lilly Logo"
-                    />
-                  </div>
-                  <div className="flex">
-                    <img
-                      className="mx-auto h-6 w-fit invert"
-                      src="https://html.tailus.io/blocks/customers/openai.svg"
-                      alt="OpenAI Logo"
-                    />
+                    <span className="font-medium text-sm">TanStack Query</span>
                   </div>
                 </InfiniteSlider>
 
@@ -128,6 +132,10 @@ export default function HeroSection() {
             </div>
           </div>
         </section>
+        <FeaturesSection />
+        <HowItWorksSection />
+        <UseCasesSection />
+        <About />
       </main>
     </>
   );
