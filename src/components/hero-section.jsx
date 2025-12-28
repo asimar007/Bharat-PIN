@@ -53,9 +53,9 @@ export default function HeroSection() {
                   </Button>
                 </div>
               </div>
-              {/* <div className="relative -z-10 order-first ml-auto w-full max-w-[400px] aspect-square lg:absolute lg:inset-0 lg:-right-20 lg:-top-70 lg:order-last lg:w-2/3 lg:max-w-none lg:h-max">
+              <div className="relative -z-10 order-first ml-auto w-full max-w-[400px] aspect-square lg:absolute lg:inset-0 lg:-right-20 lg:-top-70 lg:order-last lg:w-2/3 lg:max-w-none lg:h-max">
                 <Globe className="w-full h-full mix-blend-lighten invert-0" />
-              </div> */}
+              </div>
             </div>
           </div>
         </section>
