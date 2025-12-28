@@ -1,5 +1,5 @@
 import { Logo } from "@/components/logo";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import React from "react";
 
@@ -70,14 +70,9 @@ export const HeroHeader = () => {
                 </ul>
               </div>
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                <Button asChild variant="outline" size="sm">
-                  <a href="#">
-                    <span>Login</span>
-                  </a>
-                </Button>
                 <Button asChild size="sm">
-                  <a href="#">
-                    <span>Sign Up</span>
+                  <a href="https://github.com/asimar007/Bharat-PIN">
+                    <Github className="h-4 w-4" />
                   </a>
                 </Button>
               </div>

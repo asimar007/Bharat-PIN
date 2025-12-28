@@ -9,6 +9,7 @@ import { FeaturesSection } from "./features-section";
 import { UseCasesSection } from "./use-cases-section";
 import { HowItWorksSection } from "./how-it-works-section";
 import { About } from "./about";
+import WorldMapDemo from "@/components/hero-map";
 
 export default function HeroSection() {
   return (
@@ -136,6 +137,7 @@ export default function HeroSection() {
         <HowItWorksSection />
         <UseCasesSection />
         <About />
+        <WorldMapDemo />
       </main>
     </>
   );
