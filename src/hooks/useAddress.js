@@ -7,7 +7,6 @@ const fetchAddress = async ({ queryKey }) => {
   );
   if (!response.ok) throw new Error("Failed to fetch address");
   const data = await response.json();
-  console.log(data);
   return data.address;
 };
 
