@@ -1,12 +1,15 @@
-import { useState } from "react";
-import { getDigiPin } from "../utils/digipin";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
+import { getDigiPin, getLatLngFromDigiPin } from "../utils/digipin";
 import { useIndiaBorder } from "../hooks/useIndiaBorder";
 import MapWrapper from "../components/MapWrapper";
 import IndiaBorderLayer from "../components/IndiaBorderLayer";
+import ShareModal from "../components/ShareModal";
 import LocationMarker from "../components/LocationMarker/LocationMarker";
 import CurrentLocationButton from "../components/CurrentLocationButton";
 import StatusBar from "../components/StatusBar/StatusBar";
 import ErrorBanner from "../components/ErrorBanner";
+import OfflineIndicator from "../components/OfflineIndicator";
 import SEO from "../components/SEO";
 
 const initialPosition = { lat: 28.6448, lng: 77.216721 }; // Default Location (Delhi)
@@ -21,6 +24,26 @@ export default function MapPage() {
   });
   const [mapPosition, setMapPosition] = useState(initialPosition);
   const [locationError, setLocationError] = useState(null);
+  const [isShareModalOpen, setIsShareModalOpen] = useState(false);
+  const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    const pin = searchParams.get("pin");
+    if (pin) {
+      try {
+        const coords = getLatLngFromDigiPin(pin);
+        const lat = parseFloat(coords.latitude);
+        const lng = parseFloat(coords.longitude);
+        const location = { lat, lng, digiPin: pin };
+
+        setSelectedLocation(location);
+        setMapPosition({ lat, lng });
+      } catch (err) {
+        console.error("Invalid PIN from URL:", err);
+        setLocationError("Invalid PIN link provided");
+      }
+    }
+  }, [searchParams]);
 
   const handleLocationFound = (latlng) => {
     setLocationError(null);
@@ -59,6 +82,7 @@ export default function MapPage() {
           </MapWrapper>
 
           <ErrorBanner message={locationError} />
+          <OfflineIndicator />
         </div>
 
         {selectedLocation && (
@@ -69,9 +93,15 @@ export default function MapPage() {
                 setMapPosition({ lat: loc.lat, lng: loc.lng });
                 setSelectedLocation(loc);
               }}
+              onShare={() => setIsShareModalOpen(true)}
             />
           </div>
         )}
+        <ShareModal
+          isOpen={isShareModalOpen}
+          onClose={() => setIsShareModalOpen(false)}
+          location={selectedLocation}
+        />
       </div>
     </>
   );

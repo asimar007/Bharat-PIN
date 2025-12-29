@@ -1,8 +1,9 @@
 import React from "react";
+import { Share2 } from "lucide-react";
 import CopyPinButton from "./CopyPinButton";
 import PinSearchInput from "./PinSearchInput";
 
-export default function StatusBar({ location, onSearchLocation }) {
+export default function StatusBar({ location, onSearchLocation, onShare }) {
   return (
     <div className="bg-white border-t shadow-sm pb-safe">
       <div className="max-w-7xl mx-auto px-2 sm:px-4">
@@ -19,8 +20,15 @@ export default function StatusBar({ location, onSearchLocation }) {
                   {location.digiPin}
                 </div>
               </div>
-              <div className="flex-shrink-0">
+              <div className="flex-shrink-0 flex gap-1">
                 <CopyPinButton text={location.digiPin} />
+                <button
+                  onClick={onShare}
+                  className="p-2 text-gray-500 hover:text-black hover:bg-gray-100 rounded-md transition-colors"
+                  aria-label="Share Location"
+                >
+                  <Share2 className="w-4 h-4" />
+                </button>
               </div>
             </div>
 
@@ -72,6 +80,13 @@ export default function StatusBar({ location, onSearchLocation }) {
                   </span>
                 </span>
                 <CopyPinButton text={location.digiPin} />
+                <button
+                  onClick={onShare}
+                  className="p-2 text-gray-500 hover:text-black hover:bg-gray-100 rounded-md transition-colors"
+                  aria-label="Share Location"
+                >
+                  <Share2 className="w-4 h-4" />
+                </button>
               </div>
             </div>
             <div className="flex-shrink-0">
