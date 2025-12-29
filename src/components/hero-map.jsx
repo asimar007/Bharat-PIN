@@ -6,7 +6,7 @@ export default function WorldMapDemo() {
   return (
     <div className="py-10 bg-background w-full">
       <div className="max-w-7xl mx-auto text-center">
-        <p className="font-bold text-xl md:text-4xl dark:text-white text-black">
+        <p className="font-bold text-xl md:text-4xl text-white">
           Digital Addressing for{" "}
           <span className="text-neutral-400">
             {"India".split("").map((word, idx) => (
